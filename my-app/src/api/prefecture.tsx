@@ -7,7 +7,7 @@ type Prefecture = {
 
 const [statePrefecture, setPrefectureList ] = useState<Prefecture>();
 
-const fetchData = async () => {
+const fetchPrefectureListData = async () => {
     const url = 'https://opendata.resas-portal.go.jp/api/v1/prefectures'
     const apiKey = process.env.API_KEY
 
@@ -22,7 +22,7 @@ const fetchData = async () => {
 const PrefectureListResourceView = () => {
     useEffect(() => {
     　　 (async () => {
-            await fetchData()
+            await fetchPrefectureListData()
         })();
     }, []);
     return statePrefecture;
