@@ -6,9 +6,9 @@ const prefecturePopulationData = async () => {
     const prefectureData = usePrefectureList();
     const params = prefectureData.map(prefecture =>  prefecture.prefCode).join(',');
     const url = `https://opendata.resas-portal.go.jp/api/v1/population/sum/perYear?cityCode=-&prefCode=${params}`;
-    const apiKey = process.env.API_KEY as string;
+    const apiKey = process.env.REACT_APP_API_KEY as string;
 
-    const response = await fetch(url,{headers:{apiKey}, mode: 'cors'});
+    const response = await fetch(url,{headers:{ 'X-API-KEY': apiKey}, mode: 'cors'});
     if (!response.ok) {
         throw new Error(`API Error: ${response.status} ${response.statusText}`);
     }

@@ -5,14 +5,14 @@ const PrefectureCheckBox: React.FC = () => {
     const prefectureListData = usePrefectureList();
     console.log(prefectureListData)
     return (
-        <>
-            <div>
-                {prefectureListData.map ( prefecture => 
-                    <input type="checkbox" checked={true} value={prefecture.prefName}/>
-                    )
-                }
-            </div>
-        </>
+        <div style={{width: '720px', margin: '20px auto'}}>
+            {prefectureListData.map ( prefecture => 
+                <label className="PrefectureName" style={{marginLeft: '8px'}}> {prefecture.prefName}
+                    <input type="checkbox" value={prefecture.prefName} />
+                </label>
+                )
+            }
+        </div>
     )
 } 
 

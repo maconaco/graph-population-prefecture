@@ -7,7 +7,6 @@ function App() {
     return (
         <>
           <PrefectureCheckBox />
-          <h1>aaaaaaaaaaaaaaaaaaaaaaaaa</h1>
         </>
     );
 }
